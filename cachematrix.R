@@ -1,19 +1,12 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
-## example of usage:
-## > mmm <- replicate(20, rnorm(20))
-## > cm <- makeCacheMatrix(mmm)
-## > xx <- cacheSolve(cm) # getting NOT cached data
-## > xx <- cacheSolve(cm) # getting cached data
-
-
+## This function creates a particolar matrix object which wrapps a matrix and 
+##provides the getter/setter function in order to stores inside the related inverse matrix.
 makeCacheMatrix <- function(x = matrix()) {
-
+  
   # random matrix: replicate(20, rnorm(20))
-   
+  
   m <- NULL
   set <- function(y) {
     x <<- y
@@ -29,10 +22,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## This function checks if for the input x (instance of makeCacheMatrix) already
+## the inverse has been performed (solve function), otherwise it is going to be performed
+## and cached as property in x.
 cacheSolve <- function(x, ...) {
-
+  
   ## Return a matrix that is the inverse of 'x'
   m <- x$getsolve()
   if(!is.null(m)) {
@@ -45,3 +39,9 @@ cacheSolve <- function(x, ...) {
   m
   
 }
+
+## example of usage:
+## > mmm <- replicate(20, rnorm(20))
+## > cm <- makeCacheMatrix(mmm)
+## > xx <- cacheSolve(cm) # getting NOT cached data
+## > xx <- cacheSolve(cm) # getting cached data
