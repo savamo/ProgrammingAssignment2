@@ -5,8 +5,6 @@
 ##provides the getter/setter function in order to stores inside the related inverse matrix.
 makeCacheMatrix <- function(x = matrix()) {
 
-  # random matrix: replicate(20, rnorm(20))
-   
   m <- NULL
   set <- function(y) {
     x <<- y
