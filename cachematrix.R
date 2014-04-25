@@ -1,13 +1,6 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-
-## example of usage:
-## > mmm <- replicate(20, rnorm(20))
-## > cm <- makeCacheMatrix(mmm)
-## > xx <- cacheSolve(cm) # getting NOT cached data
-## > xx <- cacheSolve(cm) # getting cached data
-
 ## This function creates a particolar matrix object which wrapps a matrix and 
 ##provides the getter/setter function in order to stores inside the related inverse matrix.
 makeCacheMatrix <- function(x = matrix()) {
@@ -46,3 +39,9 @@ cacheSolve <- function(x, ...) {
   m
   
 }
+
+## example of usage:
+## > mmm <- replicate(20, rnorm(20))
+## > cm <- makeCacheMatrix(mmm)
+## > xx <- cacheSolve(cm) # getting NOT cached data
+## > xx <- cacheSolve(cm) # getting cached data
