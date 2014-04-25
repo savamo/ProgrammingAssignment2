@@ -39,7 +39,7 @@ cacheSolve <- function(x, ...) {
   m
   
 }
-
+ 
 ## example of usage:
 ## > mmm <- replicate(20, rnorm(20))
 ## > cm <- makeCacheMatrix(mmm)
